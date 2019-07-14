@@ -1,11 +1,12 @@
-import React, { Component } from "./node_modules/react"; 
+import React, { Component } from "react"; 
 // Components
+import AboutCard from "../Components/AboutCard";
 
 class Homepage extends Component {
   render() {
     return (
      <div>
-       <h1>Hello World</h1>
+       <AboutCard/>
      </div>
     );
   }
