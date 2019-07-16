@@ -1,4 +1,6 @@
 import React, { Component } from "react"; 
+// Navigation
+import {Redirect} from 'react-router-dom';
 // Styles
 import {Button, Card, CardBody, CardTitle, CardSubtitle, Col, Row } from "reactstrap"
 // Icons
@@ -6,7 +8,22 @@ import { FaGithub, FaLinkedin, FaFile, FaFileArchive } from 'react-icons/fa';
 import { MdEmail } from "react-icons/md"
 
 class AboutCard extends Component {
+    state = {
+        gitRedirect: false
+    }
+
+    // settings state on changes
+    handleStateChange(e){
+        this.setState({[e.target.name]: true})
+    }
+    
     render() {
+        const { gitRedirect } = this.state;
+
+        if (gitRedirect) {
+          return <Redirect to="https://github.com/M-Faheem-Khan"/>;
+        }
+
         return (
             <div>
                 <Row>
@@ -17,7 +34,7 @@ class AboutCard extends Component {
                                     <CardTitle style={{fontSize: "2em"}}>Muhammad Faheem Khan</CardTitle>
                                     <CardSubtitle style={{fontSize: "24px"}}>Software Developer</CardSubtitle>
                                     <br/>
-                                    <Button style={{margin: "10px"}} outline color="primary">
+                                    <Button name="gitRedirect" style={{margin: "10px"}} outline color="primary">
                                         <FaGithub size={"1em"}/> Github
                                     </Button>
 
