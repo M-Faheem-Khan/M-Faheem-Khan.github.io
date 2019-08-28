@@ -1,27 +1,25 @@
-body{
-	text-rendering: optimizeLegibility;
+body {
+  	text-rendering: optimizeLegibility;
+	background: #efefef
 }
-
 a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
+	text-decoration: none;
+	font-size: 22px;
+	color: black;
 }
 
-.profile_image{
-	/* width: 35%; */
+.profile_image {
 	border-radius: 3px;
-	/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
-.about_col{
+.about_col {
 	padding: 7px;
 }
 
-.social_icons{
-	font-size: 1.5rem
+.social_icons {
+	font-size: 1.5rem;
 }
 
-.icon{
-	padding: 7px
+.icon {
+	padding: 7px;
 }
