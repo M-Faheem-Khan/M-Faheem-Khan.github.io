@@ -11,81 +11,86 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="./css/styles.css" />
+
+    <script>
+        window.addEventListener("load", function() {
+            var load_screen = document.getElementById("load_screen");
+            document.body.removeChild(load_screen);
+        });
+    </script>
+
 </head>
 
-<body>
-    <!-- navbar -->
-    <nav class="navbar navbar-light bg-trasnparent">
-        <a class="navbar-brand" href="#">
-            <img src="./images/logo.jpg" width="30" height="30" alt="">
-        </a>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="./other/M-Faheem-Khan-Resume.pdf" target="_blank">Resumé</a>
-            </li>
-        </ul>
-    </nav>
-    <!-- navbar -->
+<body id="page-top">
+    <div id="load_screen">
+        <img alt="loading animation" src="./images/loading_animation.gif">
+    </div>
 
-    <!-- Content -->
-    <!-- container -->
-    <div class="container-fluid full">
-        <div class="row">
-            <!-- About Me -->
-            <div class="col-sm-12 col-md-4 col-lg-3">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col-12 about_col">
-                            <div class="d-flex justify-content-center">
-                                <!-- Profile Image -->
-                                <div class="profile_image_container">
-                                    <img class="profile_image" alt="profile picture" src="./images/profile_200x200.jpg" />
+    <!-- Navigation -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav"> -->
+    <div class="container">
+        <!-- navbar -->
+        <nav class="navbar navbar-light bg-white fixed-top">
+            <a class="navbar-brand" href="#">
+                <img src="./images/logo.jpg" width="30" height="30" alt="">
+            </a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./other/M-Faheem-Khan-Resume.pdf" target="_blank">Resumé</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- navbar -->
+    </div>
+    <!-- </nav> -->
+
+    <header class="bg-primary text-white">
+        <div class="container text-center mx-auto">
+            <div class="row">
+                <!-- About Me -->
+                <div class="col-sm-12 col-md-4 col-lg-3">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-12 about_col">
+                                <div class="d-flex justify-content-center">
+                                    <!-- Profile Image -->
+                                    <div class="profile_image_container">
+                                        <img class="profile_image" alt="profile picture" src="./images/profile_200x200.jpg" />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-12 about_col">
-                            <!-- Personal Info -->
-                            <div class="personal_info">
-                                <h3>Muhammad F. Khan</h3>
-                                <p class="title text-muted">Full Stack Developer / Coding Instructor</p>
-                                <p class="title text-muted">I am 1 <sup>st</sup> year information security student currently working as a Full Stack Developer and Coding Instructor.</p>
+                            <div class="col-12 about_col">
+                                <!-- Personal Info -->
+                                <div class="personal_info">
+                                    <h3>Muhammad F. Khan</h3>
+                                    <p class="title ">Full Stack Developer / Coding Instructor</p>
+                                    <p class="title ">I am 1 <sup>st</sup> year information security student currently working as a Full Stack Developer and Coding Instructor.</p>
+                                </div>
+
+                            </div>
+
+                            <div class="col-12 about_col">
+                                <!-- Social Links -->
+                                <div class="social_icons">
+                                    <a class="icon" href="https://github.com/M-Faheem-Khan/" target="_blank">
+                                        <span class="fa fa-github icon" aria-hidden="true"></span>
+                                    </a>
+                                    <a class="icon" href="https://www.linkedin.com/in/muhammad-faheem-khan/" target="_blank">
+                                        <span class="fa fa-linkedin-square icon" aria-hidden="true"></span>
+                                    </a>
+                                </div>
                             </div>
 
                         </div>
-
-                        <div class="col-12 about_col">
-                            <!-- Social Links -->
-                            <div class="social_icons">
-                                <a href="https://github.com/M-Faheem-Khan" target="_blank">
-                                    <span class="fa fa-github icon" aria-hidden="true"></span>
-                                </a>
-                                <a href="https://linkeidin" target="_blank">
-                                    <span class="fa fa-linkedin-square icon" aria-hidden="true"></span>
-                                </a>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
+    </header>
 
-            <!-- Projects -->
-            <div class="col-sm-12 col-md-8 col-lg-9">
-                <div class="container">
-                    <div class="d-flex justify-content-center">
-                        The Projects section currently under construction and will be complted soon. In the mean while you can view my projects on github.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <br />
-
+    <section id="contact">
         <!-- Contact -->
         <div class="container">
             <div class="d-flex justify-content-center">
@@ -115,9 +120,15 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <br />
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+        </div>
+        <!-- /.container -->
+    </footer>
 
 </body>
 
