@@ -14,12 +14,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/styles.css" />
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.4.2/firebase-firestore.js"></script>
+
+    <!-- LOADING SCREEN -->
     <script>
         window.addEventListener("load", function() {
             var load_screen = document.getElementById("load_screen");
             document.body.removeChild(load_screen);
         });
     </script>
+
 
 </head>
 
@@ -46,11 +52,11 @@
     </div>
     <!-- </nav> -->
 
-    <header class="bg-primary text-white">
+    <header class="bg-primary text-white w-100">
         <div class="container text-center mx-auto">
             <div class="row">
                 <!-- About Me -->
-                <div class="col-sm-12 col-md-4 col-lg-3">
+                <div class="col-sm-12 col-md-4 col-lg-4">
                     <div class="container text-center">
                         <div class="row">
                             <div class="col-12 about_col">
@@ -68,6 +74,7 @@
                                     <h3>Muhammad F. Khan</h3>
                                     <p class="title ">Full Stack Developer / Coding Instructor</p>
                                     <p class="title ">I am 1 <sup>st</sup> year information security student currently working as a Full Stack Developer and Coding Instructor.</p>
+                                    <p>Email: <cite title="faheem5948@gmail.com">faheem5948@gmail.com</cite></p>
                                 </div>
 
                             </div>
@@ -78,9 +85,15 @@
                                     <a class="icon" href="https://github.com/M-Faheem-Khan/" target="_blank">
                                         <span class="fa fa-github icon" aria-hidden="true"></span>
                                     </a>
+
                                     <a class="icon" href="https://www.linkedin.com/in/muhammad-faheem-khan/" target="_blank">
                                         <span class="fa fa-linkedin-square icon" aria-hidden="true"></span>
                                     </a>
+
+                                    <a class="icon" href="mailto:faheem5948@gmail.com" target="_blank">
+                                        <i class="fa fa-envelope-open-o icon"></i>
+                                    </a>
+
                                 </div>
                             </div>
 
@@ -96,8 +109,8 @@
             <div class="d-flex justify-content-center">
                 <div class="row">
                     <div class="col-12">
-                        <h3 class="text-center">Contact</h3>
-                        <form id="contact" method="post" class="form" role="form">
+                        <h3 class="text-center text-white">Contact</h3>
+                        <form id="contact" class="form" role="form">
                             <div class="row">
                                 <div class="col-xs-6 col-md-6 form-group">
                                     <input class="form-control" id="name" name="name" placeholder="Name" type="text" required />
@@ -107,12 +120,12 @@
                                 </div>
                             </div>
 
-                            <textarea class="form-control" id="message" name="message" placeholder="Message" rows="5"></textarea>
+                            <textarea class="form-control" id="message" name="message" placeholder="Message" rows="5" required></textarea>
 
                             <br />
                             <div class="row">
                                 <div class="col-xs-12 col-md-12 form-group justify-content-center text-center">
-                                    <button class="btn btn-outline-primary  bt-lg pull-center" type="submit">Send</button>
+                                    <button class="btn btn-outline-light pull-center col-4" onclick="sendMessage()" type="button">Send</button>
                                 </div>
                             </div>
                         </form>
@@ -123,13 +136,13 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="py-3 bg-white ">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+            <p class="m-0 text-center ">Made with <span class="fa icon-red fa-heart"></span> in Toronto 2019</p>
         </div>
         <!-- /.container -->
     </footer>
-
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>
