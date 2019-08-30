@@ -12,17 +12,28 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 function sendMessage() {
-    console.log("hello world")
-    firebase.firestore().collection("Messages").add({
-        first: "Alan",
-        middle: "Mathison",
-        last: "Turing",
-        born: 1912,
-        DateCreated: new Date().toDateString(),
-        TimeStamp: new Date().toISOString()
-    }).then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
-    }).catch(function(error) {
-        console.error("Error adding document: ", error);
-    });
+    // get data values
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    if (!name) {
+        console.log("Please Enter name")
+    } else if (!email) {
+        console.log("Please Enter email")
+    } else if (!message) {
+        console.log("Please Enter Message")
+    } else {
+        firebase.firestore().collection("Messages").add({
+            Name: name,
+            Email: email,
+            Message: message,
+            DateCreated: new Date().toDateString(),
+            TimeStamp: new Date().toISOString()
+        }).then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        }).catch(function(error) {
+            console.error("Error adding document: ", error);
+        });
+    }
 }

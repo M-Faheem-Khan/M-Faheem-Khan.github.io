@@ -7,7 +7,11 @@ body {
 body {
     font-family: 'Roboto', sans-serif;
     text-rendering: optimizeLegibility;
-    background: #007bff!important
+    /* background: #007bff !important */
+}
+
+#content {
+    display: none;
 }
 
 a {
@@ -47,14 +51,19 @@ section {
     padding: 150px 0;
 }
 
+
+/* LOADING SCREEN ANIMATION */
+
 div#load_screen {
     background: #efefef;
-    opacity: 1;
-    position: fixed;
-    z-index: 10;
-    top: 0px;
+    display: flex;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
     width: 100%;
-    height: 1600px;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 div#load_screen>div#loading {
@@ -62,4 +71,73 @@ div#load_screen>div#loading {
     width: 120px;
     height: 24px;
     margin: 300px auto;
+}
+
+
+/* SNACKBAR */
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
 }

@@ -21,8 +21,8 @@
     <!-- LOADING SCREEN -->
     <script>
         window.addEventListener("load", function() {
-            var load_screen = document.getElementById("load_screen");
-            document.body.removeChild(load_screen);
+            document.getElementById("content").style.display = "block"
+            document.getElementById("load_screen").style.display = "none"
         });
     </script>
 
@@ -30,9 +30,14 @@
 </head>
 
 <body id="page-top">
-    <div id="load_screen">
-        <img alt="loading animation" src="./images/loading_animation.gif">
-    </div>
+    <center>
+        <div id="load_screen">
+            <!-- <img alt="loading animation" src="./images/loading_animation.gif"> -->
+            <div class="spinner-grow text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </center>
 
     <!-- Navigation -->
     <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav"> -->
@@ -52,97 +57,101 @@
     </div>
     <!-- </nav> -->
 
-    <header class="bg-primary text-white w-100">
-        <div class="container text-center mx-auto">
-            <div class="row">
-                <!-- About Me -->
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col-12 about_col">
-                                <div class="d-flex justify-content-center">
-                                    <!-- Profile Image -->
-                                    <div class="profile_image_container">
-                                        <img class="profile_image" alt="profile picture" src="./images/profile_200x200.jpg" />
+    <div id="content">
+        <header class="bg-primary text-white w-100">
+            <div class="container text-center mx-auto">
+                <div class="row">
+                    <!-- About Me -->
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <div class="container text-center">
+                            <div class="row">
+                                <div class="col-12 about_col">
+                                    <div class="d-flex justify-content-center">
+                                        <!-- Profile Image -->
+                                        <div class="profile_image_container">
+                                            <img class="profile_image" alt="profile picture" src="./images/profile_200x200.jpg" />
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="col-12 about_col">
-                                <!-- Personal Info -->
-                                <div class="personal_info">
-                                    <h3>Muhammad F. Khan</h3>
-                                    <p class="title ">Full Stack Developer / Coding Instructor</p>
-                                    <p class="title ">I am 1 <sup>st</sup> year information security student currently working as a Full Stack Developer and Coding Instructor.</p>
-                                    <p>Email: <cite title="faheem5948@gmail.com">faheem5948@gmail.com</cite></p>
+                                <div class="col-12 about_col">
+                                    <!-- Personal Info -->
+                                    <div class="personal_info">
+                                        <h3>Muhammad F. Khan</h3>
+                                        <p class="title ">Full Stack Developer / Coding Instructor</p>
+                                        <p class="title ">I am 1 <sup>st</sup> year information security student currently working as a Full Stack Developer and Coding Instructor.</p>
+                                        <p>Email: <cite title="faheem5948@gmail.com">faheem5948@gmail.com</cite></p>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-12 about_col">
+                                    <!-- Social Links -->
+                                    <div class="social_icons">
+                                        <a class="icon" href="https://github.com/M-Faheem-Khan/" target="_blank">
+                                            <span class="fa fa-github icon" aria-hidden="true"></span>
+                                        </a>
+
+                                        <a class="icon" href="https://www.linkedin.com/in/muhammad-faheem-khan/" target="_blank">
+                                            <span class="fa fa-linkedin-square icon" aria-hidden="true"></span>
+                                        </a>
+
+                                        <a class="icon" href="mailto:faheem5948@gmail.com" target="_blank">
+                                            <i class="fa fa-envelope-open-o icon"></i>
+                                        </a>
+
+                                    </div>
                                 </div>
 
                             </div>
+                        </div>
+                    </div>
+                </div>
+        </header>
 
-                            <div class="col-12 about_col">
-                                <!-- Social Links -->
-                                <div class="social_icons">
-                                    <a class="icon" href="https://github.com/M-Faheem-Khan/" target="_blank">
-                                        <span class="fa fa-github icon" aria-hidden="true"></span>
-                                    </a>
-
-                                    <a class="icon" href="https://www.linkedin.com/in/muhammad-faheem-khan/" target="_blank">
-                                        <span class="fa fa-linkedin-square icon" aria-hidden="true"></span>
-                                    </a>
-
-                                    <a class="icon" href="mailto:faheem5948@gmail.com" target="_blank">
-                                        <i class="fa fa-envelope-open-o icon"></i>
-                                    </a>
-
+        <section id="contact">
+            <!-- Contact -->
+            <div class="container">
+                <div class="d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="text-center text-dark">Contact</h3>
+                            <form id="contact" class="form" action="#" method="POST" role="form">
+                                <div class="row">
+                                    <div class="col-xs-6 col-md-6 form-group">
+                                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required />
+                                    </div>
+                                    <div class="col-xs-6 col-md-6 form-group">
+                                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required />
+                                    </div>
                                 </div>
-                            </div>
 
+                                <textarea class="form-control" id="message" name="message" placeholder="Message" rows="5" required></textarea>
+
+                                <br />
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-12 form-group justify-content-center text-center">
+                                        <button class="btn btn-outline-primary pull-center col-4" type="button" onclick="sendMessage()">Send</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-    </header>
+        </section>
 
-    <section id="contact">
-        <!-- Contact -->
-        <div class="container">
-            <div class="d-flex justify-content-center">
-                <div class="row">
-                    <div class="col-12">
-                        <h3 class="text-center text-white">Contact</h3>
-                        <form id="contact" class="form" role="form">
-                            <div class="row">
-                                <div class="col-xs-6 col-md-6 form-group">
-                                    <input class="form-control" id="name" name="name" placeholder="Name" type="text" required />
-                                </div>
-                                <div class="col-xs-6 col-md-6 form-group">
-                                    <input class="form-control" id="email" name="email" placeholder="Email" type="email" required />
-                                </div>
-                            </div>
-
-                            <textarea class="form-control" id="message" name="message" placeholder="Message" rows="5" required></textarea>
-
-                            <br />
-                            <div class="row">
-                                <div class="col-xs-12 col-md-12 form-group justify-content-center text-center">
-                                    <button class="btn btn-outline-light pull-center col-4" onclick="sendMessage()" type="button">Send</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+        <!-- Footer -->
+        <footer class="py-3 bg-white ">
+            <div class="container">
+                <p class="m-0 text-center ">Made with <span class="fa icon-red fa-heart"></span> in Toronto 2019</p>
             </div>
+            <!-- /.container -->
+        </footer>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="py-3 bg-white ">
-        <div class="container">
-            <p class="m-0 text-center ">Made with <span class="fa icon-red fa-heart"></span> in Toronto 2019</p>
-        </div>
-        <!-- /.container -->
-    </footer>
-    <script type="text/javascript" src="js/main.js"></script>
+
+        <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>
