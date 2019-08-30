@@ -18,15 +18,15 @@ function sendMessage() {
     var message = document.getElementById("message").value;
 
     if (!name) {
-        let error = '<div class="alert alert-danger" role="alert">Please Enter Name</div>'
+        let error = '<div class="alert alert-warning alert-dismissible fade show" role="alert">Please Enter Name<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
         document.getElementById("error").innerHTML = error
         document.getElementById("error").style.display = "block";
     } else if (!email) {
-        let error = '<div class="alert alert-danger" role="alert">Please Enter Email</div>'
+        let error = '<div class="alert alert-warning alert-dismissible fade show" role="alert">Please Enter Email<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
         document.getElementById("error").innerHTML = error
         document.getElementById("error").style.display = "block";
     } else if (!message) {
-        let error = '<div class="alert alert-danger" role="alert">Please Enter Message</div>'
+        let error = '<div class="alert alert-warning alert-dismissible fade show" role="alert">Please Enter Message<<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>/div>'
         document.getElementById("error").innerHTML = error
         document.getElementById("error").style.display = "block";
     } else {
@@ -43,7 +43,7 @@ function sendMessage() {
                 document.getElementById("success").style.display = "none";
             }, 3000);
         }).catch(function(error) {
-            document.getElementById("error").innerHTML = '<div class="alert alert-danger" role="alert">Unable to send message!! Try email me at faheem5948@gmail.com</div>'
+            document.getElementById("error").innerHTML = '<div class="alert alert-warning alert-dismissible fade show" role="alert">Unable to send message!! Try email me at faheem5948@gmail.com<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
             document.getElementById("error").style.display = "block";
         });
     }
