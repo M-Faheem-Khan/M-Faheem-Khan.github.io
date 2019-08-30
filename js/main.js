@@ -18,12 +18,19 @@ function sendMessage() {
     var message = document.getElementById("message").value;
 
     if (!name) {
-        console.log("Please Enter name")
+        let error = '<div class="alert alert-danger" role="alert">Please Enter Name</div>'
+        document.getElementById("error").innerHTML = error
+        document.getElementById("error").style.display = "block";
     } else if (!email) {
-        console.log("Please Enter email")
+        let error = '<div class="alert alert-danger" role="alert">Please Enter Email</div>'
+        document.getElementById("error").innerHTML = error
+        document.getElementById("error").style.display = "block";
     } else if (!message) {
-        console.log("Please Enter Message")
+        let error = '<div class="alert alert-danger" role="alert">Please Enter Message</div>'
+        document.getElementById("error").innerHTML = error
+        document.getElementById("error").style.display = "block";
     } else {
+        document.getElementById("error").style.display = "none";
         firebase.firestore().collection("Messages").add({
             Name: name,
             Email: email,
@@ -31,9 +38,13 @@ function sendMessage() {
             DateCreated: new Date().toDateString(),
             TimeStamp: new Date().toISOString()
         }).then(function(docRef) {
-            console.log("Document written with ID: ", docRef.id);
+            document.getElementById("success").style.display = "block";
+            setInterval(function() {
+                document.getElementById("success").style.display = "none";
+            }, 3000);
         }).catch(function(error) {
-            console.error("Error adding document: ", error);
+            document.getElementById("error").innerHTML = '<div class="alert alert-danger" role="alert">Unable to send message!! Try email me at faheem5948@gmail.com</div>'
+            document.getElementById("error").style.display = "block";
         });
     }
 }
